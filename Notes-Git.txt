@@ -105,6 +105,44 @@ Delete a remote branch:
 ----------------------
 	git push <alias> --delete <remote branch name>
 	git push origin --delete feature/crapbranch
+	
+-----------------------------------------------------------------------------
+| *************** Staging and Commiting/Reverting/Resetting *************** |
+-----------------------------------------------------------------------------
+
+To commit a file it MUST FIRST BE STAGED. 'Staging' is saying 'I think I am ready to commit this/these files'
+
+Staging a file (a new or modified file):
+----------------------------------------
+	git stage <file>
+	git stage helloWorld.c
+	git stage someLib.js
+
+Staging many files at once (new or modified files)
+--------------------------------------------------
+	git stage . (where . is the current repo context)
+
+Removing a file from the staging area:
+--------------------------------------
+1. Simply update the file and save it and it will be removed from the stage automatically :-)
+
+2. git restore --staged <file>
+   git restore --staged <index.html>
+   git restore --staged . (for all staged files)
+   
+Commiting a file/s (It/they MUST have been added to the staging environment first):
+-----------------------------------------------------------------------------------
+	git commit -m "<message>"
+	git commit -m "fixed that annoying bug"
+	
+Updating a Commmit (amend):
+---------------------------
+This option adds another level of functionality to the commit command. 
+Passing this option will modify the last commit. 
+Instead of creating a new commit, staged changes will be added to the previous commit. 
+This command will open up the system's configured text editor and prompt to change the previously specified commit message.
+
+	git commit --amend
 
 ----------------------------------------
 | *************** Stash *************** |
