@@ -105,6 +105,66 @@ Delete a remote branch:
 ----------------------
 	git push <alias> --delete <remote branch name>
 	git push origin --delete feature/crapbranch
+	
+-----------------------------------------------------------------------------
+| *************** Staging and Commiting/Reverting/Resetting *************** |
+-----------------------------------------------------------------------------
+
+To commit a file it MUST FIRST BE STAGED. 'Staging' is saying 'I think I am ready to commit this/these files'
+
+Staging a file (a new or modified file):
+----------------------------------------
+	git stage <file>
+	git stage helloWorld.c
+	git stage someLib.js
+
+Staging many files at once (new or modified files)
+--------------------------------------------------
+	git stage . (where . is the current repo context)
+
+Removing a file from the staging area:
+--------------------------------------
+1. Simply update the file and save it and it will be removed from the stage automatically :-)
+
+2. git restore --staged <file>
+   git restore --staged <index.html>
+   git restore --staged . (for all staged files)
+   
+Commiting a file/s (It/they MUST have been added to the staging environment first):
+-----------------------------------------------------------------------------------
+	git commit -m "<message>"
+	git commit -m "fixed that annoying bug"
+	
+Updating a Commmit (amend):
+---------------------------
+This option adds another level of functionality to the commit command. 
+Passing this option will modify the last commit. 
+Instead of creating a new commit, staged changes will be added to the previous commit. 
+This command will open up the system's configured text editor and prompt to change the previously specified commit message.
+
+	git commit --amend
+
+Checking out a Commit:
+----------------------
+You can checkout a commit (read only) and see what the repo looked like at that time. 
+	
+1. Get the commit hash for that commit first
+	git log --oneline
+
+2. Assuming the commit you want to checkout is: 'cbc8a5d Tabs added to stash section'
+   Run the command:
+	git checkout <has>
+	git checkout cbc8a5d
+	
+3. To go back to the tip of the branch (HEAD):
+	git checkout <branch name>
+	git checkout master
+	
+Note: If you have untracked file, unstaged files or uncommited files in the staging area
+	  it will warn you about these and say that you have a 'detatched head'. These file are left
+	  untouched and when you go back to where you were these files will be there untouched as before
+	 
+	
 
 ----------------------------------------
 | *************** Stash *************** |
