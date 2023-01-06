@@ -132,7 +132,7 @@ Apply a stash when you return to your branch:
 
 Drop a stash:
 -------------
-	git stadh drop stash@{n}
+	git stash drop stash@{n}
 
 Drop LATEST stash from top of list (effectivley {0}):
 -----------------------------------------------------
