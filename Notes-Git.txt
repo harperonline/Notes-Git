@@ -24,40 +24,40 @@ Thus the order of priority for configuration levels is: local, global, system. T
 
 Listing a full config:
 ----------------------
-git config --list (shows all entries)
+	git config --list (shows all entries)
 
 Editing a full config:
 ---------------------
-git config --global --edit
+	git config --global --edit
 
 Show a config entry:
 --------------------
-git config <key>
-git config user.email (show user email)
-git config remote.origin.url (shows remote origin url)
+	git config <key>
+	git config user.email (show user email)
+	git config remote.origin.url (shows remote origin url)
 
 Writing a config entry:
 -----------------------
-git config --<config level> <key> <value>
-git config --global user.name "Chris Harper" (sets a global username)
-git config --local fave.food "Curry" (sets a new key-vale pair within a repository context
+	git config --<config level> <key> <value>
+	git config --global user.name "Chris Harper" (sets a global username)
+	git config --local fave.food "Curry" (sets a new key-vale pair within a repository context
 
 Updating a config entry:
 -----------------------
 Current global config key-valeu pair: user.email=me@here.com
 Needs to be:user.email=me@there.co.uk
 Command:
-git config --global user.email "me@there.co.uk" 
+	git config --global user.email "me@there.co.uk" 
 
 Delete an entry:
 ----------------
-git config --global --unset <key>
-git config --global --unset core.excludesfile
+	git config --global --unset <key>
+	git config --global --unset core.excludesfile
 
 Setting global text editor:
 ---------------------------
-git config --global core.editor "nano -w" (Nano)
-git config --global core.editor "vim" (ViMproved)
+	git config --global core.editor "nano -w" (Nano)
+	git config --global core.editor "vim" (ViMproved)
 
 ------------------------------------------
 | *************** Remotes *************** |
@@ -65,22 +65,22 @@ git config --global core.editor "vim" (ViMproved)
 
 Checking remote config:
 ----------------------
-git remote -v
+	git remote -v
 
 Adding a remote: 
 ----------------
-git remote add <alias> <url>
-git remote add origin https://github.com/harperonline/git.git
+	git remote add <alias> <url>
+	git remote add origin https://github.com/harperonline/git.git
 
 Changing a remote: 
 ------------------
-git remote set-url <alias> <url>
-git remote set-url origin https://github.com/harperonline/git.git
+	git remote set-url <alias> <url>
+	git remote set-url origin https://github.com/harperonline/git.git
 
 Remove a remote:
 ----------------
-git remote remove <alias>
-git remote remove origin
+	git remote remove <alias>
+	git remote remove origin
 
 -------------------------------------------
 | *************** Branches *************** |
@@ -88,23 +88,55 @@ git remote remove origin
 
 Creating a new local branch (without switching):
 ------------------------------------------------
-git branch <branch name>
-git branch feature/featurename
+	git branch <branch name>
+	git branch feature/featurename
 
 Creating a new local branch (and switching):
 --------------------------------------------
-git checkout -b <branch name>
-git checkout -b feature/featurename
+	git checkout -b <branch name>
+	git checkout -b feature/featurename
 
 Delete a local branch:
 ----------------------
-git branch -d <branch name>
-git branch -d feature/crapbranch
+	git branch -d <branch name>
+	git branch -d feature/crapbranch
 
 Delete a remote branch:
 ----------------------
-git push <alias> --delete <remote branch name>
-git push origin --delete feature/crapbranch
+	git push <alias> --delete <remote branch name>
+	git push origin --delete feature/crapbranch
+
+----------------------------------------
+| *************** Stash *************** |
+----------------------------------------
+Git stash enables you to save your code without making a commit. How is this useful? Picture the following scenario:
+
+You’ve already made three neat and tidy commits, but you also have some uncommitted code that’s quite messy; 
+you won’t want to commit it without removing your debugging code first. Then, for some reason, you suddenly need to attend to another task and have to switch branches. 
+This can often happen if you are on your main branch, and you have forgotten to create a new branch for your feature. 
+
+A stash will only work for STAGED files.
+
+Stash a staged file for later:
+------------------------------
+	git stash (do this with the branch that you wish to stash the files for later)
+
+Show the available stashes:
+---------------------------
+	git stash list
+
+Apply a stash when you return to your branch:
+--------------------------------------------
+	git stash apply stash@{<stash ID>}
+	git stash apply stash@{0}
+
+Drop a stash:
+-------------
+	git stadh drop stash@{n}
+
+Drop LATEST stash from top of list (effectivley {0}):
+-----------------------------------------------------
+	git stash drop
 
 
 
