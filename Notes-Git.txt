@@ -1,6 +1,6 @@
------------------------
-| ***** Remotes ***** |
------------------------
+------------------------------------------
+| *************** Remotes *************** |
+------------------------------------------
 
 Checking remote config:
 ----------------------
@@ -21,9 +21,9 @@ Remove a remote:
 git remote remove <alias>
 git remote remove origin
 
------------------------
-| ***** Branches ***** |
------------------------
+-------------------------------------------
+| *************** Branches *************** |
+-------------------------------------------
 
 Creating a new local branch (without switching):
 ------------------------------------------------
@@ -34,5 +34,18 @@ Creating a new local branch (and switching):
 --------------------------------------------
 git checkout -b <branch name>
 git checkout -b feature/featurename
+
+Delete a local branch:
+----------------------
+git branch -d <branch name>
+git branch -d feature/crapbranch
+
+Delete a remote branch:
+----------------------
+git push <alias> --delete <remote branch name>
+git push origin --delete feature/crapbranch
+
+
+
 
 
