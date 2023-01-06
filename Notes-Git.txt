@@ -127,16 +127,16 @@ Show the available stashes:
 
 Apply a stash when you return to your branch:
 --------------------------------------------
-git stash apply stash@{<stash ID>}
-git stash apply stash@{0}
+	git stash apply stash@{<stash ID>}
+	git stash apply stash@{0}
 
 Drop a stash:
 -------------
-git stadh drop stash@{n}
+	git stadh drop stash@{n}
 
 Drop LATEST stash from top of list (effectivley {0}):
 -----------------------------------------------------
-git stash drop
+	git stash drop
 
 
 
