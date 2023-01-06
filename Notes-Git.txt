@@ -1,0 +1,23 @@
+-----------------------
+| ***** Remotes ***** |
+-----------------------
+
+Checking remote config:
+----------------------
+git remote -v
+
+Adding a remote: 
+----------------
+git remote add <alias> <url>
+git remote add origin https://github.com/harperonline/git.git
+
+Changing a remote: 
+------------------
+git remote set-url <alias> <url>
+git remote set-url origin https://github.com/harperonline/git.git
+
+Remove a remote:
+----------------
+git remote remove <alias>
+git remote remove origin
+
