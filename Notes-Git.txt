@@ -54,6 +54,11 @@ Delete an entry:
 git config --global --unset <key>
 git config --global --unset core.excludesfile
 
+Setting global text editor:
+---------------------------
+git config --global core.editor "nano -w" (Nano)
+git config --global core.editor "vim" (ViMproved)
+
 ------------------------------------------
 | *************** Remotes *************** |
 ------------------------------------------
