@@ -167,8 +167,8 @@ Note: If you have untracked file, unstaged files or uncommited files in the stag
 Reverting a commit (Revert Commit):
 ----------------------------------
 
-Reseting who repo to an old commit (dangerous):
------------------------------------------------
+Reseting who repo to an old commit (Reset commit):
+-------------------------------------------------
 
 ----------------------------------------
 | *************** Stash *************** |
