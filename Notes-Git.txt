@@ -173,10 +173,10 @@ Reverting a commit (Revert Commit):
 	git revert <hash>
 	e.g. 
 	git revert 6860ee5
-
+	
 3. Add a comment to detail the nature of the revert. REMEMBER the  
    commit you revert is NOT deleted from the history and you can
-   even revert the revert! Add a sensible comment
+   even revert the revert!
 
 Reseting who repo to an old commit (Reset commit):
 -------------------------------------------------
