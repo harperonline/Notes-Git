@@ -180,6 +180,19 @@ Reverting a commit (Revert Commit):
 
 Reseting who repo to an old commit (Reset commit):
 -------------------------------------------------
+This is a risky buscuit!
+There are 2 types of reset:
+1. Soft reset - where the commit are rolled back but the file changes since the commit rolled
+   back to still exists adn appear as 'unstaged files'
+2. Hard reset - where the commit is rolled back and ALL file changes since the commit are NUKED!
+
+	git reset <hash>
+	e.g.
+	(Soft) git reset <adf4661> 
+	(Hard) git reset <adf4661> --hard
+	
+
+
 
 ----------------------------------------
 | *************** Stash *************** |
