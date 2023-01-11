@@ -144,8 +144,8 @@ This command will open up the system's configured text editor and prompt to chan
 
 	git commit --amend
 
-Checking out a Previous Commit:
--------------------------------
+Checking out a Previous Commit (Checkout Commit):
+-------------------------------------------------
 You can checkout a commit (read only) and see what the repo looked like at that time. 
 	
 1. Get the commit hash for that commit first
@@ -164,11 +164,32 @@ Note: If you have untracked file, unstaged files or uncommited files in the stag
 	  it will warn you about these and say that you have a 'detatched head'. These file are left
 	  untouched and when you go back to where you were these files will be there untouched as before
 	 
-Reverting a commit:
--------------------
+Reverting a commit (Revert Commit):
+----------------------------------
+1. Determine the commit that you wish to revert using:
+	git log --oneline
 
-Reseting who repo to an old commit (dangerous):
------------------------------------------------
+2. Revert the commit:
+	git revert <hash>
+	e.g. 
+	git revert 6860ee5
+	
+3. Add a comment to detail the nature of the revert. REMEMBER the  
+   commit you revert is NOT deleted from the history and you can
+   even revert the revert!
+
+Reseting who repo to an old commit (Reset commit):
+-------------------------------------------------
+This is a risky buscuit!
+There are 2 types of reset:
+1. Soft reset - where the commit are rolled back but the file changes since the commit rolled
+   back to still exists adn appear as 'unstaged files'
+2. Hard reset - where the commit is rolled back and ALL file changes since the commit are NUKED!
+
+	git reset <hash>
+	e.g.
+	(Soft) git reset <adf4661> 
+	(Hard) git reset <adf4661> --hard
 
 ----------------------------------------
 | *************** Stash *************** |
