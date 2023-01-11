@@ -170,8 +170,6 @@ Reverting a commit (Revert Commit):
 Reseting who repo to an old commit (Reset commit):
 -------------------------------------------------
 
-something to reset right here!
-
 ----------------------------------------
 | *************** Stash *************** |
 ----------------------------------------
