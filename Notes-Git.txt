@@ -191,6 +191,8 @@ There are 2 types of reset:
 	(Soft) git reset <adf4661> 
 	(Hard) git reset <adf4661> --hard
 
+	git this is needs to reset and then got back if possible - delete
+
 ----------------------------------------
 | *************** Stash *************** |
 ----------------------------------------
