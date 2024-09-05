@@ -1,0 +1,17 @@
+-----------------------------------------------------
+| *************** Reverting a Commit*************** |
+-----------------------------------------------------
+
+Reverting a commit (Revert Commit):
+----------------------------------
+1. Determine the commit that you wish to revert using:
+	$ git log --oneline
+
+2. Revert the commit:
+	git revert <hash>
+	e.g. 
+	$ git revert 6860ee5
+	
+3. Add a comment to detail the nature of the revert. REMEMBER the  
+   commit you revert is NOT deleted from the history and you can
+   even revert the revert!

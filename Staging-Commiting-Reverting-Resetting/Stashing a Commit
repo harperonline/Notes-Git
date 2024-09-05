@@ -1,0 +1,31 @@
+----------------------------------------
+| *************** Stash *************** |
+----------------------------------------
+Git stash enables you to save your code without making a commit. How is this useful? Picture the following scenario:
+
+You’ve already made three neat and tidy commits, but you also have some uncommitted code that’s quite messy; 
+you won’t want to commit it without removing your debugging code first. Then, for some reason, you suddenly need to attend to another task and have to switch branches. 
+This can often happen if you are on your main branch, and you have forgotten to create a new branch for your feature. 
+
+A stash will only work for STAGED files.
+
+Stash a staged file for later:
+------------------------------
+	$ git stash (do this with the branch that you wish to stash the files for later)
+
+Show the available stashes:
+---------------------------
+	$  git stash list
+
+Apply a stash when you return to your branch:
+--------------------------------------------
+	git stash apply stash@{<stash ID>}
+	$ git stash apply stash@{0}
+
+Drop a stash:
+-------------
+	$ git stash drop stash@{n}
+
+Drop LATEST stash from top of list (effectivley {0}):
+-----------------------------------------------------
+	$ git stash drop
