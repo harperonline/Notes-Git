@@ -1,0 +1,23 @@
+-------------------------------------------
+| *************** Staging *************** |
+-------------------------------------------
+
+To commit a file it MUST FIRST BE STAGED. 'Staging' is saying 'I think I am ready to commit this/these files'
+
+Staging a file (a new or modified file):
+----------------------------------------
+	git stage <file>
+	$ git stage helloWorld.c
+	$ git stage someLib.js
+
+Staging many files at once (new or modified files)
+--------------------------------------------------
+	$ git stage . (where . is the current repo context)
+
+Removing a file from the staging area:
+--------------------------------------
+1. Simply update the file and save it and it will be removed from the stage automatically :-)
+
+2. git restore --staged <file>
+   $ git restore --staged index.html
+   $ git restore --staged . (for all staged files)

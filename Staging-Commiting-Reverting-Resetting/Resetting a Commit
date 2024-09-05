@@ -1,0 +1,49 @@
+---------------------------------------------
+| *************** Resetting *************** |
+---------------------------------------------
+
+Reseting who repo to an old commit (Reset commit):
+-------------------------------------------------
+This is a risky buscuit!
+There are 2 types of reset:
+1. Soft reset - where the commit are rolled back but the file changes since the commit rolled
+   back to still exists adn appear as 'unstaged files'
+2. Hard reset - where the commit is rolled back and ALL file changes since the commit are NUKED!
+
+	git reset <hash>
+
+	(Soft) 
+	$ git reset adf4661>
+
+	(Hard) 
+	$ git reset adf4661 --hard
+
+Restoring a commit after a 'Hard Reset'
+---------------------------------------
+Assuming that you haven't pushed your branch after a hard reset you can restore the to a commit 
+point by looking at the git ref log. 
+
+1. Look at the reflog:
+	
+	$ git reflog
+
+Output:
+	3369fde (HEAD) HEAD@{2}: commit: Reset hard to trash this commit and see if you can checkout the reflog hash to get it back (Here is the RESET HARD)
+	e68fdc8 (origin/master, feature/commiting, a) HEAD@{3}: pull origin master: Fast-forward
+	d031f3d (origin/feature/commiting) HEAD@{4}: commit: Updated reset hard
+	ea00928 HEAD@{5}: reset: moving to ea00928
+	444dc04 HEAD@{6}: reset: moving to 444dc04
+
+You can see that we reset to commit: 'e68fdc8 (origin/master, feature/commiting, a) HEAD@{3}: pull origin master: Fast-forward'
+and the ref log shows the hard reset.
+
+2. To roll the hard reset back, perform a git reset <hash> --hard for the <hash> BEFORE the reset.
+	
+	$ git reset e68fdc8 --hard (resets to the commit before the reset
+
+	e68fdc8 (origin/master, feature/commiting, a) HEAD@{1}: reset: moving to e68fdc8
+	3369fde (HEAD) HEAD@{2}: commit: Reset hard to trash this commit and see if you can checkout the reflog hash to get it back
+	e68fdc8 (origin/master, feature/commiting, a) HEAD@{3}: pull origin master: Fast-forward
+	d031f3d (origin/feature/commiting) HEAD@{4}: commit: Updated reset hard
+	ea00928 HEAD@{5}: reset: moving to ea00928
+	444dc04 HEAD@{6}: reset: moving to 444dc04
