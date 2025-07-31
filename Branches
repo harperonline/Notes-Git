@@ -21,3 +21,8 @@ Delete a remote branch:
 ----------------------
 	git push <alias> --delete <remote branch name>
 	$ git push origin --delete feature/crapbranch
+
+Purge a the list of remote branches:
+------------------------------------
+	git fetch <alias> --prune
+	$ git fetch origin --prune 
