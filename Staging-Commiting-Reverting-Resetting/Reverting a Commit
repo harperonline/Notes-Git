@@ -1,17 +1,25 @@
 -----------------------------------------------------
 | *************** Reverting a Commit*************** |
------------------------------------------------------
+---
 
-Reverting a commit (Revert Commit):
-----------------------------------
+---
+
+Working with Git involves experimentation and iteration. Mistakes happen during development, and sometimes you need to reverse changes. Git gives you control over your code history with features to undo changes at any point in your Git workflow.
+
+Recover from accidental commits, remove sensitive data, fix incorrect merges, and maintain a clean repository history. When collaborating with others, preserve transparency with new revert commits, or reset your work locally before sharing. The method to use depends on whether the changes are:
+
+Only on your local computer.
+Stored remotely on a Git server
+
+## Reverting a commit (Revert Commit):
+
 1. Determine the commit that you wish to revert using:
-	$ git log --oneline
+   $ git log --oneline
 
 2. Revert the commit:
-	git revert <hash>
-	e.g. 
-	$ git revert 6860ee5
-	
+   git revert <hash>
+   e.g.
+   $ git revert 6860ee5
 3. Add a comment to detail the nature of the revert. REMEMBER the  
    commit you revert is NOT deleted from the history and you can
    even revert the revert!

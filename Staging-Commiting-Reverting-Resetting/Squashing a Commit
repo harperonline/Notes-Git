@@ -1,0 +1,20 @@
+----------------------------------------------------
+| *************** Squashing a Commit *************** |
+---
+
+---
+
+Git has the ability squashing commits on a branch that HAS NOT BEEN PULLED YET and combine commits into 1 commit.
+This is typically when a developer has created a load a commits whist developing a feature and wants to group the commits into one sensibel commit.
+
+## Syntax
+
+    $ git reset --soft HEAD~<Number of commits to sqaush>
+    $ git commit -m "<New commit message>"
+    $ git push --force origin <branch name>
+
+## Example: A feature branch (feature/implementHelloWorld) has 10 commits that need sqashing into 1
+
+    $ git reset --soft HEAD~10
+    $ git commit -m "Hello World Code"
+    $ git push --force	feature/implementHelloWorld
